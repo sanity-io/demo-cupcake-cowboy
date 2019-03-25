@@ -1,11 +1,37 @@
 {
   "root": true,
   "project": {
-    "name": "cupcake-cowboy"
+    "name": "Cupcake Ranch"
   },
+  "__experimental_spaces": [{
+      "name": "cowboy",
+      "title": "Cupcake Cowboy",
+      "default": true,
+      "api": {
+        "projectId": "lgsl107s",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "ranch",
+      "title": "Cupcake Ranch",
+      "api": {
+        "projectId": "lgsl107s",
+        "dataset": "ranch"
+      }
+    },
+    {
+      "name": "homestead",
+      "title": "Cupcake Homestead",
+      "api": {
+        "projectId": "lgsl107s",
+        "dataset": "ranch"
+      }
+    }
+  ],
   "api": {
     "projectId": "lgsl107s",
-    "dataset": "production"
+    "dataset": "ranch"
   },
   "plugins": [
     "@sanity/base",
@@ -15,8 +41,7 @@
     "@sanity/desk-tool",
     "@sanity/google-maps-input"
   ],
-  "parts": [
-    {
+  "parts": [{
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
     },
