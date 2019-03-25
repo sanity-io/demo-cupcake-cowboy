@@ -12,5 +12,6 @@ S.list()
       .id('The Wagon')
       .schemaType("wagon")
       .documentId('the-wagon')
-    )
-  ]);
+    ),
+    //...S.documentTypeListItems().filter(type => !['wagon'].includes(type.getId()))
+  ])

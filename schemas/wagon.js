@@ -16,6 +16,10 @@ export default {
     {
       name: 'location',
       type: 'geopoint'
+    },
+    {
+      name: 'cupcake',
+      type: 'cupcake'
     }
   ]
 }
