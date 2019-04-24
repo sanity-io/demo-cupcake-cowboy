@@ -9,6 +9,9 @@ import wrangler from './wrangler'
 import recipe from './recipe'
 import ingredient from './ingredient'
 import ranch from './ranch'
+import article from './article'
+import allergen from './allergen'
+import measurement from './measurement'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,6 +25,9 @@ export default createSchema({
     wrangler,
     recipe,
     ingredient,
-    ranch
+    ranch,
+    article,
+    allergen,
+    measurement
   ])
 })

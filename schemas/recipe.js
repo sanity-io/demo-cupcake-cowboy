@@ -1,6 +1,22 @@
 export default {
   name: 'recipe',
   type: 'document',
+  title: 'Recipe',
+  preview: {
+    select: {
+      name: 'name',
+      availability: 'availability',
+      ingredients: 'ingredients'
+    },
+    prepare: ({
+      name,
+      availability,
+      ingredients
+    }) => ({
+      title: name,
+      subtitle: `${availability.from} - ${availability.to}`
+    })
+  },
   fields: [{
       name: 'name',
       type: 'string'
@@ -18,78 +34,20 @@ export default {
         }
       ]
     }, {
+      name: 'procedure',
+      type: 'array',
+      of: [
+        {
+          type: 'block',
+          of: [
+            { type: 'measurement'},
+          ]
+        }
+      ]
+    },{
       name: 'ingredients',
       type: 'array',
-      of: [{
-        name: 'ingredient',
-        type: 'object',
-        fields: [{
-            name: 'name',
-            type: 'reference',
-            to: [{
-              type: 'ingredient'
-            }]
-          }, {
-            name: 'measure',
-            type: 'number',
-          },
-          {
-            name: 'unit',
-            type: 'string',
-            options: {
-              list: [{
-                  value: 'teaspoon',
-                  title: 'Teaspoon'
-                },
-                {
-                  value: 'tablespoon',
-                  title: 'Tablespoon'
-                },
-                {
-                  value: 'fluid',
-                  title: 'Fluid'
-                },
-                {
-                  value: 'gill',
-                  title: 'Gill'
-                },
-                {
-                  value: 'cup',
-                  title: 'Cup'
-                },
-                {
-                  value: 'pint',
-                  title: 'Pint'
-                },
-                {
-                  value: 'quart',
-                  title: 'Quart'
-                },
-                {
-                  value: 'gallon',
-                  title: 'Gallon'
-                },
-              ]
-            }
-          }
-        ],
-        preview: {
-          select: {
-            name: 'name.name',
-            measure: 'measure',
-            unit: 'unit'
-          },
-          prepare({
-            name,
-            measure,
-            unit = ''
-          }) {
-            return {
-              title: `${name}: ${measure} ${unit}`
-            }
-          }
-        }
-      }]
+      of: [{ type: 'measurement'},],
     },
     {
       name: 'figure',

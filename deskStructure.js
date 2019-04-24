@@ -4,7 +4,7 @@ import locationStore from 'part:@sanity/base/location'
 import {
   map
 } from 'rxjs/operators'
-let loc = client.config().dataset
+
 
 
 
@@ -20,6 +20,7 @@ const ranch = S.list()
   .items([
     S.listItem()
     .title('The Ranch')
+    .showIcon(true)
     .child(
       S.editor()
       .id('The Ranch')
@@ -34,6 +35,7 @@ const homestead = S.list()
   .items([
     S.listItem()
     .title('The Ranch')
+    .showIcon(true)
     .child(
       S.editor()
       .id('The Ranch')

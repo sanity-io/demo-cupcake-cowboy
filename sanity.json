@@ -3,7 +3,8 @@
   "project": {
     "name": "Cupcake Ranch"
   },
-  "__experimental_spaces": [{
+  "__experimental_spaces": [
+    {
       "name": "cowboy",
       "title": "Cupcake Cowboy",
       "default": true,
@@ -39,9 +40,11 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "@sanity/google-maps-input"
+    "@sanity/google-maps-input",
+    "url-metadata-input"
   ],
-  "parts": [{
+  "parts": [
+    {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema.js"
     },
